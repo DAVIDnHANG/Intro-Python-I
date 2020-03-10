@@ -54,6 +54,18 @@ print(f3(8))     # Should print 9
 # Should print
 # key: a, value: 12
 # key: b, value: 30
+def f4(**kwargs):
+    print(kwargs)
+
+#############
+def func_keyword_arg_dict(**kwargs):
+    for key, value in kwargs.items():
+        print(key,":",value)
+
+func_keyword_arg_dict(keyword1=10, keyword2='foo')
+# keyword2 : foo
+# keyword1 : 1
+####################
 f4(a=12, b=30)
 
 # Should print
@@ -68,4 +80,6 @@ d = {
 }
 
 # How do you have to modify the f4 call below to make this work?
+def f4(my_data):
+    print(my_data["monster"], my_data["hp"])
 f4(d)
