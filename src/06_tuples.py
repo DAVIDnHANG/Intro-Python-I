@@ -34,11 +34,22 @@ print("Distance is: {:.2f}".format(dist(a, b)))
 
 # Write a function `print_tuple` that prints all the values in a tuple
 
-# YOUR CODE HERE
+def print_tuple(t):
+     print(t)
+     print(f"To print the tuple, which is all the number inside {t}")
+     a=0
+     for i in t:
+         Tupleindex = t.index(i)
+         print(f'inside tuple index {Tupleindex}, number {i}')
 
+#%%
 t = (1, 2, 5, 7, 99)
 print_tuple(t)  # Prints 1 2 5 7 99, one per line
 
 # Declare a tuple of 1 element then print it
-u = (1)  # What needs to be added to make this work?
+u = (1,)  # What needs to be added to make this work?
 print_tuple(u)
+# For the exercise, look up the methods and functions that are available for use
+# with Python lists.
+
+
