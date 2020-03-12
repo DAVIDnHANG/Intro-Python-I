@@ -34,19 +34,21 @@ from datetime import datetime
 
 today = datetime.today()
 
-if len(sys.argv) >= 3:
+if len(sys.argv) > 4:
     #print (sys.argv[0])
     print('Please pass in month year arguement example: 14_cal.py [month] [year] ')
+elif len(sys.argv) == 3:
+    #print (sys.argv[0])
+    print ("you specify month", sys.argv[1], 'your specify year', sys.argv[2])
+    print(calendar.month(int(sys.argv[2]),int(sys.argv[1]),1,1))
 elif len(sys.argv) == 2:
+    print('month you entered is ', sys.argv[1], 'you didnt specific year', today.year)
+    print(sys.argv[1],today.year)
+    print(calendar.month(today.year,int(sys.argv[1]),1,1))
+else: #passing in cal.py
     #print (sys.argv[0])
-    print ("one arguement", today.month, today.year)
-    print(calendar.month(sys.argv[1],sys.argv[2]))
-elif len(sys.argv) == 1:
-    print('today month of year', today.month, 'current year', today.year)
-    print(calendar.month(today.year,sys.argv[1],1,1))
-else:
-    #print (sys.argv[0])
-    print ("today month", today.month)
+    print ("No argument, "
+           "today month", today.month)
     print(calendar.month(today.year, today.month, 1, 1))
 
 
