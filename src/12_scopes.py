@@ -35,19 +35,19 @@ def outer():
 outer()
 #%%
 def outer():
-    global y
-    outer.y = 120
+    y = 120
+    #outer.y = 120
 
     def inner():
+        nonlocal y
         y = 999
-        print(y)
-        outer.y=999
+        print('inner', y)
     inner()
 
     # This prints 120. What do we have to change in inner() to get it to print
     # 999?
     # Note: Google "python nested function scope".
-    print(outer.y)
+    print('stuff', y)
 
 
 outer()
